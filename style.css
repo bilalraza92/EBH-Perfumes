@@ -1,0 +1,507 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Sansation", sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+:root{
+    --parimary-black:#000000;
+    --secondary-black:#101010;
+    --parimary-white:#ffffff;
+    --secondary-white:#f0f0f0;
+    --parimary-pink:#efc3c5;
+    --parimary-pista:#E2F2B0;
+}
+
+.main-container{ 
+    min-height: 100vh;
+    isolation: isolate;
+    position: relative;
+}
+.main-container::before{
+    content: "";
+     position: absolute;
+     bottom: 0;
+    width: 100%;
+    height: 30vh;
+    z-index: -1;
+    background-color: var(--parimary-black);
+    filter: blur(10px);
+}
+
+.bg-dark-black{
+    background-color:var(--parimary-black);
+}
+
+.bg-light-black{
+    background-color: var(--secondary-black);
+}
+
+.circle{
+    position: absolute;
+    top:-7%;
+    left: 50%;
+    transform: translate(-50% , 50%) ;
+    background: var(--parimary-white);
+    width: 20em;
+    height: 25rem;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -2;
+}
+
+.container{
+    width: 100%;
+    max-width: 1300px;
+   /* min-height: 100vh; */
+   padding: 0 ,2rem;
+    margin: auto;
+}
+
+/* -------navbar-------- */
+
+header{
+   
+    height: 14vh;
+}
+
+.logo{
+    width: 1.3rem;
+    aspect-ratio: 1;
+    background: var(--parimary-white);
+    transform: rotate(45deg);
+    position: relative;
+}
+.logo::before{
+    content: "";
+    position: absolute;
+     width: 1.4rem; 
+     aspect-ratio: 1;
+     border: .1rem solid var(--parimary-white);
+}
+
+.navbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navlist{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.link{
+    color:var(--secondary-white);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.link:hover, .active {
+    color: var(--parimary-pink);
+}
+
+.hambuger{
+    display:none;
+     flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+     z-index: 1000;
+}
+
+.line{
+    width: 2.2rem;
+    height: .2rem;
+    margin: .35rem;
+    background: var(--parimary-white);
+}
+
+/* -------Hero section----- */
+
+.hero-section{
+    height: calc(100vh - 14vh);
+    display: flex;
+    justify-content: center;
+  
+}
+
+.left{
+   align-self: center;
+  
+   
+   
+}
+.heading{
+    font-size: 4.1rem;
+    text-transform: uppercase;
+    color: var(--parimary-white);
+    
+}
+img{
+    height: 100%;
+    display: inline-block;
+    margin: auto;
+  
+}
+
+.right{
+    align-self: flex-end;
+    margin-bottom: 4rem;
+}
+.para{
+  
+    font-size: 1rem;
+    color: var(--parimary-white);
+    line-height: 1.5rem;
+    padding: 1rem , 0 2.5rem , 0;
+    margin: 1rem 0rem;
+}
+[data-type="border-para"]{
+    border-right: .5rem solid var(--parimary-pista) ;
+    text-align: end;
+    padding-right: 2rem;
+}
+
+/*----------- slider------------ */
+
+.scroll-container{
+    white-space: nowrap;
+    overflow-x: hidden;
+    padding:2rem 0 ;
+}
+
+.scroll{
+  display: inline-block;
+  animation: 10s scroll infinite linear;
+}
+
+h2{
+    color:var(--parimary-pista);
+    font-size: 2.5rem;
+    font-family: "Sansation", sans-serif;
+    display:inline-block;
+   
+}
+[data-type="scroll-txt"]{
+    color: var(--parimary-white);
+    margin:0 2rem;
+}
+
+
+.break{
+   width: 1.1rem;
+    aspect-ratio: 1;
+    background: var(--parimary-pista);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+@keyframes scroll{
+    form{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translate(-100%);
+    }
+}
+
+/* --------story section------------ */
+
+.section-story{
+    background: var(--secondary-black);
+}
+.product{
+    height: 35rem;
+}
+.container-row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.section{
+    padding: 5rem 0 ;
+
+}
+.content{
+    width: 100%;
+    max-width: 550px;
+}
+.primary-btn{
+    color: var(--parimary-black);
+    background-color: var(--parimary-pista);
+    padding: .6rem 1.2rem;
+   margin-top: 5%;
+}
+.primary-btn:hover{
+    background-color: var(--parimary-pink);
+}
+
+/* --------card------------ */
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+}
+.card-product{
+    height: 9rem;
+}
+
+
+
+.grid-card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 75%;
+    height: 100%;
+}
+.card{
+    background-color:var(--secondary-black);
+    padding: 2rem 0;
+    border: .2rem solid rgb(51, 51, 51);
+    transition: transfom.3s ease-in-out;
+}
+
+.card:hover{
+    background-color: rgb(51, 51, 51);
+    transform: scale(1.05);
+}
+
+h4, .price{
+   color: var(--parimary-white);
+    font-size: 1rem;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+/* -------our services--------- */
+
+h3{
+    font-size: 1.4rem;
+    color: var(--parimary-white);
+}
+
+.services-card{
+    padding-top: 2rem;
+    position: relative;
+    isolation: isolate;
+}
+.services-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0 ;
+    width:100%;
+    height: .3rem;
+    background-color: var(--parimary-pista);
+    z-index: -1;
+    transition:.3s all ;
+}
+
+.services-card:hover::before{
+    height: 100%;
+}
+
+.services-card:hover.services-card *{
+    color: var(--parimary-black);
+}
+
+/* -------sale--------- */
+
+
+.sale-product{
+    height: 14rem;
+
+}
+
+.sale-heading{
+    color: var(--parimary-pink);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+
+}
+
+.sale-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    gap: .8rem;
+}
+
+.sale-txt{
+    font-size: 1rem;
+}
+.Celebrate{
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.glow1, .glow2{
+    position: absolute;
+    width:15rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: -1;
+}
+
+
+.glow1{
+    top:50px;
+    left:50px;
+    background-color: orangered;
+}
+
+.glow2{
+   bottom: 50px;
+   right: 50px; 
+   background-color: blue;
+}
+
+/* ------geralry */
+
+.gallrey-container{
+   
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.image-gallery{
+    height: 25rem;
+    width: 100%;
+   
+}
+
+.image-gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover ;
+}
+
+/*-------------- foooter section------------------ */
+
+.footer-txt{
+    color: var(--parimary-white);
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+/* ---------------media quries------------------- */
+
+@media screen and (max-width:580px){
+
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .navlist{
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       position: absolute;
+       inset: 0;
+       background-color: var(--parimary-black);
+        transform:translateX(-100%) ;
+        transition: transform .3s ease-in-out;
+    }
+
+    .navlist-active{
+        transform: translateX(0);
+    }
+
+    .navlist{
+        font-size: 1.1rem;
+    }
+    .logo{
+        z-index: 5;
+    }
+
+    .hambuger{
+        display: block;
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    .hero-section{
+        flex-direction: column;
+
+    }
+
+    .right, 
+    .product,
+    .sale-product{
+        display: none;
+    }
+
+    .meddle{
+        height: 28rem;
+        margin: auto;
+    }
+
+    h1{
+        font-size: 2.2rem;
+    }
+
+    .left{
+        margin-top:4rem ;
+    }
+
+    .heading{
+         font-size: 1.5rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+    .para, .footer-txt{
+        font-size: .8rem;
+    }
+
+    .grid-card{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .gallrey-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sale-txt{
+        font-size: 1rem;
+    }
+
+    .container-row{
+        padding: 5%;
+    }
+
+}
